@@ -113,4 +113,5 @@ public static class MyTestApp {
 
 ## Downloads
 
-*Coming Soon*
+- [VCMP native plugin (Windows x64)](https://github.com/ahmed605/win-vcmp-dotnet/releases/latest/download/dotnet-vcmp.dll)
+- [C# native bindings interoperability DLL (AnyCPU)](https://github.com/ahmed605/win-vcmp-dotnet/releases/latest/download/Fleka.DotnetVcmp.Interop.dll)

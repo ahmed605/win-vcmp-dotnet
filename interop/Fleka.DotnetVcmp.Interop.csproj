@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <PackageId>Fleka.DotnetVcmp.Interop</PackageId>
+    <Version>1.1.0</Version>
+    <Authors>Fleka</Authors>
+    <Company>Fleka</Company>
+    <Title>Dotnet bindings to VCMP API</Title>
+    <Description>This package contains bindings that allow interoperability with VCMP's API. Use this with the native dotnet loader plugin.</Description>
+    <Copyright>Copyright © 2018  Fleka</Copyright>
+    <PackageLicenseUrl>https://tldrlegal.com/license/mit-license</PackageLicenseUrl>
+  </PropertyGroup>
+
+</Project>

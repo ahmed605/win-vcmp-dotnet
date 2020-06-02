@@ -1,0 +1,12 @@
+{
+    "clr": {
+        "runtime-directory": "/usr/share/dotnet/shared/Microsoft.NETCore.App/2.1.2",
+        "server-executable": "./mpsvrrel64",
+        "assemblies-directory": "./dotnet-assemblies",
+        "native-image-assemblies-directory": "",
+        "native-dll-search-directories": ["/usr/lib"]
+    },
+    "app-domain": {
+        "friendly-name": "Example dotnet-vcmp configuration"
+    }
+}

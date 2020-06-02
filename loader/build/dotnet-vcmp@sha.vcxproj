@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7CD07D8-CB13-4DAD-8973-BBBA05F37533}</ProjectGuid>
+    <Keyword>x64Proj</Keyword>
+    <RootNamespace>dotnet-vcmp</RootNamespace>
+    <Platform>x64</Platform>
+    <ProjectName>dotnet-vcmp</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level2</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PrecompiledHeader />
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='debug|x64'">stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions />
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalOptions>-std=vc++17 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)dotnet-vcmp.dll</OutputFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>dotnet-vcmp.lib</ImportLibrary>
+      <ProgramDataBaseFileName>$(OutDir}dotnet-vcmp.pdb</ProgramDataBaseFileName>
+      <TargetMachine>MachineX64</TargetMachine>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SetChecksum>true</SetChecksum>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir>.\</OutDir>
+    <IntDir>dotnet-vcmp@sha\</IntDir>
+    <TargetName>dotnet-vcmp</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemGroup>
+    <CLCompile Include="..\source/main.cxx">
+      <AdditionalOptions>"/EHsc" "/std:c++17" "/permissive-" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>dotnet-vcmp@sha;.;..\;..\dependencies;dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)source_main.cxx.obj</ObjectFileName>
+    </CLCompile>
+    <CLCompile Include="..\source/plugin_host.cxx">
+      <AdditionalOptions>"/EHsc" "/std:c++17" "/permissive-" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>dotnet-vcmp@sha;.;..\;..\dependencies;dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)source_plugin_host.cxx.obj</ObjectFileName>
+    </CLCompile>
+    <CLCompile Include="..\source/coreclr_funcs.cxx">
+      <AdditionalOptions>"/EHsc" "/std:c++17" "/permissive-" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>dotnet-vcmp@sha;.;..\;..\dependencies;dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)source_coreclr_funcs.cxx.obj</ObjectFileName>
+    </CLCompile>
+    <CLCompile Include="..\source/dotnet_vcmp_exception.cxx">
+      <AdditionalOptions>"/EHsc" "/std:c++17" "/permissive-" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>dotnet-vcmp@sha;.;..\;..\dependencies;dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)source_dotnet_vcmp_exception.cxx.obj</ObjectFileName>
+    </CLCompile>
+    <CLCompile Include="..\source/validate_hresult.cxx">
+      <AdditionalOptions>"/EHsc" "/std:c++17" "/permissive-" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>dotnet-vcmp@sha;.;..\;..\dependencies;dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)source_validate_hresult.cxx.obj</ObjectFileName>
+    </CLCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

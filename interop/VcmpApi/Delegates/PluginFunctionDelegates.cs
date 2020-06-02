@@ -5,28 +5,28 @@ using System.Runtime.InteropServices;
 namespace Fleka.DotnetVcmp.Interop {
     public delegate uint GetServerVersionDelegate();
     public delegate VcmpError GetServerSettingsDelegate(out ServerSettings serverSettings);
-    public delegate VcmpError ExportFunctionsDelegate(int pluginID, out IntPtr functionList, IntPtr size);
+    public delegate VcmpError ExportFunctionsDelegate(int pluginID, out IntPtr functionList, ulong size);
     public delegate uint GetNumberOfPluginsDelegate();
     public delegate VcmpError GetPluginInfoDelegate(int pluginID, out PluginInfo pluginInfo);
     public delegate int FindPluginDelegate([MarshalAs(UnmanagedType.LPStr)] string pluginName);
-    public unsafe delegate IntPtr* GetPluginExportsDelegate(int pluginID, out IntPtr size);
+    public unsafe delegate IntPtr* GetPluginExportsDelegate(int pluginID, out ulong size);
     public delegate VcmpError SendPluginCommandDelegate(uint commandIdentifier, [MarshalAs(UnmanagedType.LPStr)] string format, [MarshalAs(UnmanagedType.LPStr)] string formatFirstParameter);
     public delegate ulong GetTimeDelegate();
     public delegate VcmpError LogMessageDelegate([MarshalAs(UnmanagedType.LPStr)] string format, [MarshalAs(UnmanagedType.LPStr)] string formatFirstParameter);
     public delegate VcmpError GetLastErrorDelegate();
 
-    public delegate VcmpError SendClientScriptDataDelegate(int playerID, IntPtr data, IntPtr size);
+    public delegate VcmpError SendClientScriptDataDelegate(int playerID, IntPtr data, ulong size);
     public delegate VcmpError SendClientMessageDelegate(int playerID, uint color, [MarshalAs(UnmanagedType.LPStr)] string format, [MarshalAs(UnmanagedType.LPStr)] string formatFirstParameter);
     public delegate VcmpError SendGameMessageDelegate(int playerID, [MarshalAs(UnmanagedType.LPStr)] string format, [MarshalAs(UnmanagedType.LPStr)] string formatFirstParameter);
 
     public delegate VcmpError SetServerNameDelegate([MarshalAs(UnmanagedType.LPStr)] string text);
-    public delegate VcmpError GetServerNameDelegate([MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, IntPtr size);
+    public delegate VcmpError GetServerNameDelegate([MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, ulong size);
     public delegate VcmpError SetMaxPlayersDelegate(uint maxPlayers);
     public delegate uint GetMaxPlayersDelegate();
     public delegate VcmpError SetServerPasswordDelegate([MarshalAs(UnmanagedType.LPStr)] string password);
-    public delegate VcmpError GetServerPasswordDelegate([MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, IntPtr size);
+    public delegate VcmpError GetServerPasswordDelegate([MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, ulong size);
     public delegate VcmpError SetGameModeTextDelegate([MarshalAs(UnmanagedType.LPStr)] string gameMode);
-    public delegate VcmpError GetGameModeTextDelegate([MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, IntPtr size);
+    public delegate VcmpError GetGameModeTextDelegate([MarshalAs(UnmanagedType.LPStr)] StringBuilder buffer, ulong size);
     public delegate void ShutdownServerDelegate();
 
     public delegate VcmpError SetServerOptionDelegate(ServerOption option, byte toggle);
